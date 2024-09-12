@@ -1,0 +1,5 @@
+select mx,count(*) from(select max(salary*months) as mx,count(*) as c from Employee
+group by employee_id) as a 
+group by mx
+having mx=max(mx)
+order by mx desc limit 1
